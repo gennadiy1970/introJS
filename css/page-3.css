@@ -1,0 +1,8 @@
+detals {
+    display: block;
+
+}
+.list-words {
+    list-style: none;
+    columns: 3;
+}

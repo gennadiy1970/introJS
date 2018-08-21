@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prompt &amp; Confirm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Prompt, Alert &amp; Confirm</h2>
+    </div>
+    <div class="wrapper">
+        <section>
+            <h4>BOM</h4>
+            <p>Все эти три метода относятся к API браузера, а не являются 
+                встроеным свойством языка JS.
+            </p>
+            <p>Как методы работы с браузером используются крайне редко из-за <b>блокирующего</b> характера</p>
+            <h4>alert('выведет текст')</h4>
+        </section>
+        <section>
+            <h4>prompt</h4>
+            <p>Возвращает тип данных: <b>string</b>, введенную пользователем.
+            Если пользователь ничего не ввел, то вернет значение по умолчанию.
+            Если нет значения по умолчанию, то undefined
+            </p>
+            <details> <pre><code>
+const please = 'Type text, please!';
+const hello = 'Hello World';                
+const userString = prompt(
+    please, 
+    hello
+    );                
+const userEmptyString = prompt(
+    please
+    );                
+            </code></pre>
+            </details>
+            <h4>confirm</h4>
+            <p>Возвращает true или false</p>
+            <details> <pre><code>
+const ask = 'You ara learn JS?';
+const userAnswer = confirm(ask)
+            </code></pre>
+            </details>            
+        </section>
+    </div>
+   <script src="../js/app.js"></script>
+</body>
+</html>

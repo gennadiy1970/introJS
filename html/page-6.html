@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Strict mode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Strict mode / "use strict";</h2>
+    </div>
+    <div class="wrapper">
+        <section>
+            <h4>Зачем?</h4>
+            <p>Режим strict (строгий режим), введенный в ECMAScript 5, позволяет использовать более строгий вариант JavaScript используя измененную семантику. </p>
+            <ol>
+                <li>заменяет исключениями некоторые ошибки</li>
+                <li>исправляет ошибки, мешающие оптимизации</li>
+                <li>запрещает использовать некоторые элементы синтаксиса для улучшения языка</li>
+            </ol>
+            
+        </section>
+        <section>
+            <h4>Активизация строгого режима</h4>
+            <p>Чтобы активизировать строгий режим для всего скрипта, нужно поместить оператор "use strict";  или 'use strict'; перед всеми остальными операторами скрипта</p>
+            <details><pre><code>
+<span class="comment">Синтаксис переключения 
+    в строгий режим всего скрипта</span>
+"use strict";
+var v = "Привет! 
+  Я скрипт в строгом режиме!";
+            </code></pre>
+                </details>
+                <p>Чтобы применить строгий режим только внутри блока, необхожимо использовать функцию в качестве такого блока</p>
+            <details><pre><code>
+function strict() {
+    <span class="comment">Strict режим РАБОТАЕТ 
+        внутри функции</span>
+}    
+<span class="comment">Strict режим НЕ работает 
+        вне функции</span>
+            </code></pre>
+                </details>    
+            <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Strict_mode">Подробнее о строгом режиме</a></p>            
+        </section>
+    </div>
+   <script src="../js/app.js"></script>
+</body>
+</html>

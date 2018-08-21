@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>External JS file</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/page-1/lodash.custom.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+      <h2>Подключение внешнего js-файла</h2>
+    </div>
+  <div class="wrapper">
+    <section>
+    <ol>
+      <li>Подключения ДО загрузки DOM: <p>поместить <b>&lt;script src="</b><i>path</i><b>"&gt;&lt;/script&gt;</b> в <b>head</b> </p></li>
+      <li>Подключения ПОСЛЕ загрузки DOM: <p>поместить <b>&lt;script src="</b><i>path</i><b>"&gt;&lt;/script&gt;</b> перед закытием тега</p> <b>body</b> </li>
+      <li>Порядок подключения нескольких файлов: <p>сперва библиотеки, затем файлы проекта в порядке создания и использования переменных.</p></li>
+    </ol>
+  </section>
+  <section>
+    <h4>Пример</h4>
+    <details>
+    <p>Попробуйте поменять порядок размещения скриптов с файлми <b>data.js</b> и <b>calc.js</b> </p>
+    </details>
+    <h4>Пример вызова библиотеки</h4>
+    <details>
+    <p>Раскоментируйте скрипт с файлом use-lib.js, который использует библиотеку Lodash (библиотека подключена на 9 строке кода этой страницы)</p>
+    <p>Попробуйте поменять последовательность скрипта библиотеки и скрипта вызова библиотеки</p>
+  </details>
+  </section>
+  </div>
+  <script src="../js/page-1/data.js"></script>
+  <script src="../js/page-1/calc.js"></script>
+  <script src="../js/page-1/print.js"></script>
+  <!-- <script src="../js/page-1/use-lib.js"></script> -->
+</body>
+</html>

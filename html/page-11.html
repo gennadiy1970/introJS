@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>String</h2>
+        <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String">String на MDN</a></p>
+    </div>
+    <div class="wrapper">
+        <section>
+            <h4>Спецсимволы</h4>
+            <table>
+                <tr>
+                    <th>код</th>
+                    <th>вывод на экран</th>
+                </tr>
+                <tr>
+                    <td>\0</td>
+                    <td>нулевой символ (символ NUL)</td>
+                </tr>
+                <tr>
+                    <td>\'</td>
+                    <td>одинарная кавычка</td>
+                </tr>
+                <tr>
+                    <td>\"</td>
+                    <td>двойная кавычка</td>
+                </tr>
+                <tr>
+                    <td>\\</td>
+                    <td>обратный слеш</td>
+                </tr>
+            </table>
+            <h4>Конкатенация</h4>
+            <p>Оператор <b>+</b> "склеивает" строки</p>
+            <details><pre><code>
+'abc' + 'def' <span class="comment">'abcdef'</span>
+            </code></pre>
+            </details>
+            <h4>Сравнение строк лексиграфическое</h4>
+            <p>Строки сравниваются лексикографически, т.е. посимвольно.</p>
+            <details><pre><code>
+<span class="comment">больше код числа, 
+    "больше" буква</span>
+'a'.charCodeAt(0); <span class="comment">97</span>
+'A'.charCodeAt(0); <span class="comment">65</span>
+'a' &gt; 'A'; <span class="comment">true</span>
+
+// длинна строк не важна
+'aBC'  &gt; 'Abcdefg' <span class="comment">true</span>
+'5'  &gt; '12345'    <span class="comment">true</span>
+
+'ё'.charCodeAt(0);  <span class="comment">1105</span>
+'е'.charCodeAt(0);  <span class="comment">1077</span>
+'ёж'  &gt; 'ем'; <span class="comment">true</span>
+
+'ёж'.localeCompare('ем') <span class="comment">-1</span> 
+'ем'.localeCompare('ёж') <span class="comment">1</span>   
+'ем'.localeCompare('ем') <span class="comment">0</span>  
+            </code></pre>
+            </details>            
+        </section>
+        <section>
+            <h3>Методы строк</h3>
+            <h4>Досуп к символам</h4>
+            <p>'abc'.length <span class="comment">3</span></p>
+            <p>'abc'.charAt(2) <span class="comment">c</span></p>
+            <p>'abc'[2] <span class="comment">c</span></p>
+            <h4>Поиск символа в строке</h4>
+            <p>'abc'.indexOf(b) <span class="comment">1</span></p>
+            <p>'abc'.indexOf(f) <span class="comment">-1</span></p>
+            <h4>Получение подстроки</h4>
+            <p>'abcde'.slice(1,4) <span class="comment">bcd</span></p>
+            <p>'abcde'.slice(2) <span class="comment">cde</span></p>
+            <h4>Изменение регистра</h4>
+            <p>'aBc'.toLowerCase () <span class="comment">abc</span></p>
+            <p>'abc'.toUpperCase() <span class="comment">ABC</span> </p>
+            <h4>Замена подстроки</h4>
+            <p>'abc'.replace('bc','yz'); <span class="comment">ayz</span></p>
+            <h4>CharCode</h4>
+            <p>String.fromCharCode(100) <span class="comment">d</span></p>
+            <p>'day'.charCodeAt(0) <span class="comment">d -&gt; 100</span></p>
+            <p>'ёж'.localeCompare('ем')  <span class="comment">-1</span></p>
+            <p>'ёж'.localeCompare('ём')  <span class="comment">1</span></p>
+            <p>'ёж'.localeCompare('ём')  <span class="comment">0</span></p>
+        </section>
+    </div>
+   <script src="../js/app.js"></script>
+</body>
+</html>

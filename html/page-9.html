@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Числа. Основные операторы (+-*/ %)</h2>
+
+    </div>
+    <div class="wrapper">
+        <section>
+            <h4> Понятие оператора и операнда</h4>
+            <p>operator operand <span class="comment"> ++a</span></p>
+            <p>operand1 operator operand2 <span class="comment"> a + b</span></p>
+            <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Expressions_and_Operators#%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Операторы</a></p>
+            <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Expressions_and_Operators#%D0%9F%D1%80%D0%B8%D0%BE%D1%80%D0%B8%D1%82%D0%B5%D1%82_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BE%D0%B2">Приоритет операторов</a></p>
+            <h4>Представление числа</h4>
+            <pre><code>
+<span class="comment">64-битные значения двойной 
+    точности формата IEEE 754
+    приводится к 32-битам 
+    операторами &gt;&gt;, &lt;&lt;,
+     &gt;&gt;&gt;,  ~, &, |, ^ 
+</span>
+
+0.1 + 0.2 
+    = 0.30000000000000004
+
+16-ричная  0x1ff <span class="comment"> 511</span>
+10-чная    511  <span class="comment"> 511</span>
+8-ричная   077 <span class="comment"> 511</span>   
+<span class="comment"> ЗАПРЕЩЕНА В ‘use strict’</span>
+2-чная     0b111111111 
+<span class="comment"> 511</span>
+
+1.23e+4  
+<span class="comment"> 12300</span>
+1.23e-10   
+<span class="comment">0.000000000123</span>
+Infinity
+-Infinity
++0
+-0
+NaN
+            </code></pre>
+        </section>
+        <section>
+            <h4>Числа</h4>
+            <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></p>
+            <h4>Не число</h4>
+            <p>NaN</p>
+            <h4>Некоторые важные числа</h4>
+            <p>Number.MAX_VALUE</p>
+            <p>Number.MIN_VALUE</p>
+            <p>Number.POSITIVE_INFINITY</p>
+            <p>Number.NEGATIVE_INFINITY</p>
+            <p>Number.MAX_SAFE_INTEGER - представляет максимальное безопасное целочисленное значение в JavaScript (2**53 - 1)</p>
+            <h4>Приведение к числу</h4>
+            <p>Number.parseInt() - разбирает строковый аргумент и возвращает целое число.</p>
+            <details><pre><code>
+parseInt('200.5px') 
+    <span class="comment">200</span>
+parseInt('20px') <span class="comment">20</span>
+parseInt('200.5px', 10) 
+    <span class="comment">200</span>
+parseInt('0x20') <span class="comment">32</span>
+parseInt('20',8) <span class="comment">16</span>
+parseInt('20',16) <span class="comment">32</span>
+parseInt('1000',2) <span class="comment">8</span>
+            </code></pre></details> 
+
+            <p>Number.parseFloat() - разбирает строковый аргумент и возвращает число с плавающей запятой</p>
+            <details><pre><code>
+parseFloat('200.5px') 
+    <span class="comment">200.5</span>
+parseFloat('20px')    
+    <span class="comment">NaN</span>            
+            </code></pre></details>             
+            <p>+string</p>
+            <details><pre><code>
++'200.5' 
+    <span class="comment">200.5</span>
++'20px'  
+    <span class="comment">NaN</span>            
+            </code></pre></details>            
+            <p>Number(string)  </p>
+            <details><pre><code>
+Number('200.5')  <span class="comment">200.5</span>
+Number('20px')   <span class="comment">NaN</span>            
+            </code></pre></details>
+            <h4>Проверка на число</h4>
+            <p>Number.isInteger() - определяет, является ли переданное значение целым числом.</p>
+            <details><pre><code>
+Number.isInteger(5);    
+    <span class="comment">true</span>
+Number.isInteger(-5);    
+    <span class="comment">true</span>
+Number.isInteger(5.1);    
+    <span class="comment">false</span>
+            </code></pre></details>             
+            <p>Number.isFinite()</p>
+            <details><pre><code>
+isFinite(1/0); <span class="comment">false</span>
+isFinite(-Infinity); <span class="comment">false</span>
+isFinite(NaN);  <span class="comment">false</span>
+            </code></pre></details>             
+            <p>Number.isNaN() 
+            <details><pre><code>
+isNaN(NaN);   <span class="comment">true</span>
+            </code></pre></details>                
+            </p>
+            <h4>Преобразование вида числа</h4>
+            <p>Number.prototype.toFixed() - форматирует число, используя запись с фиксированной запятой</p>
+            <details><pre><code>
+(12345.6789).toFixed(2)  
+<span class="comment">12345.68</span>                
+            </code></pre></details>
+            <p>Number(num).toString([radix])</p>
+            <details><pre><code>
+(511).toString(2) 
+  <span class="comment">111111111</span> 
+(511).toString(8) <span class="comment">777</span> 
+(511).toString(16) <span class="comment">1FF</span> 
+(511).toString(10) <span class="comment">511</span> 
+            </code></pre></details>
+        </section>
+    </div>
+   <script src="../js/app.js"></script>
+</body>
+</html>

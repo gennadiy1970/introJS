@@ -1,0 +1,15 @@
+let counter = 0;
+counter += 1;
+counter += 2;
+counter += 3;
+counter += 4;
+counter += 5;
+counter += 6;
+console.log('counter +=6 return ' + counter);
+counter += 7;
+counter += 8;
+counter += 9;
+counter += 10;
+console.info('sum counters = ' + counter)
+console.warn('sum counters = ' + counter)
+console.error('sum counters = ' + counter)

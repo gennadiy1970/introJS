@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Основы синтаксиса</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <h2>Основы синтаксиса"</h2>
+  </div>
+  <div class="wrapper">
+    <section>
+      <h4>Синтаксис</h4>
+      <p>Си-подобный синтаксис - это приятная новость для тех кто изучал Java или Python</p>
+      <p>Что нужно помнить:</p>
+      <ol>
+        <li><b>чувствителен к регистру</b> и использует кодировку символов Unicode UTF-16</li>
+        <li>инструкции называются <b>statements</b> и разделяются точкой с запятой <b>;</b>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Lexical_grammar#%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%B2%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0_%D1%82%D0%BE%D1%87%D0%BA%D0%B8_%D1%81_%D0%B7%D0%B0%D0%BF%D1%8F%D1%82%D0%BE%D0%B9">Правила вставки точки с запятой</a></p>
+        <p>Точка с запятой ставится автоматически. Но бывают редкии ситуации, когда автоматическое решение может дать неожиданный результат. Поэтому лучше ставит точку с запятой всегда.
+        </p>
+        <details><pre><code>
+<span class="comment">пример неоднозначности в коде 
+    из-за отсутсвия скобок</span>
+    function sum(a, b) {
+    return a + b;
+  }
+<span class="comment">каррирование 
+  foo(a, b) = foo(a)(b) </span>
+  function getB (b) {
+    return function getA (a) {
+        return a + b;
+    }
+  }
+<span class="comment">проверяем</span>
+  getB(2)(3)  
+<span class="comment">получаем 5. Работает!</span>
+
+<span class="comment">будем добавлять 100</span>
+  let add100 = getB(100);
+  add100(200) 
+<span class="comment">получим 300</span>
+  
+  add100   <span class="comment">функция ждет 
+  второго аргумента в скобках</span>
+  (10 + 20) <span class="comment"> использовать
+  круглые скобки можно всегда</span>
+<span class="comment">получим 130, JS не посчитал 
+  перенос как разделитель
+  и не поставил скобки.</span>
+        
+
+        </code></pre>
+
+        </details>
+        </li>
+        <li>комментарии однострочные  <span style="font-style: italic; color: grey">// comments</span></li>
+        <li>комментарии многострочные  <span style="font-style: italic; color: grey">/* comments */</span></li>
+      </ol>
+    </section>
+   <section>
+     <h4>Правила написания кода в редакторе</h4>
+     <p><a href="https://github.com/airbnb/javascript">Описание стиля форматирования кода JS</a> от <i>airbnb</i> - фактическому стандарту индустрии.</p>
+     <p><a href="https://github.com/airbnb/javascript/blob/master/linters/.eslintrc">Пример файла конфигурации для <i>ESLinter</i> от <i>airbnb</i></a>.
+    Сам <i>ESLinter</i> находится в Visual Studio Code в разделе плагинов. Файл <b>.eslintrc</b> необходимо размещать в корне проекта. Потому что правила от проекта к проекту могут изменяться и это зафиксируется в файле кажого проекта.</p>
+   </section>
+  </div>
+</body>
+
+</html>
